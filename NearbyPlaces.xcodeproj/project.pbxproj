@@ -15,6 +15,8 @@
 		FB839B7E24057FEF00690E26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB839B7C24057FEF00690E26 /* LaunchScreen.storyboard */; };
 		FB839B8924057FEF00690E26 /* NearbyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839B8824057FEF00690E26 /* NearbyPlacesTests.swift */; };
 		FB839B9424057FEF00690E26 /* NearbyPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839B9324057FEF00690E26 /* NearbyPlacesUITests.swift */; };
+		FB839BA2240580AF00690E26 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BA1240580AF00690E26 /* DetailView.swift */; };
+		FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BE42405CDA300690E26 /* PlacesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FB839B8F24057FEF00690E26 /* NearbyPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbyPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB839B9324057FEF00690E26 /* NearbyPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPlacesUITests.swift; sourceTree = "<group>"; };
 		FB839B9524057FEF00690E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB839BA1240580AF00690E26 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		FB839BE42405CDA300690E26 /* PlacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,9 @@
 		FB839B7024057FEA00690E26 /* NearbyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				FB839BE32405CCE900690E26 /* Networking */,
+				FB839BE02405CCB200690E26 /* Stories */,
+				FB839BDF2405CCA800690E26 /* Model */,
 				FB839B7124057FEA00690E26 /* AppDelegate.swift */,
 				FB839B7324057FEA00690E26 /* SceneDelegate.swift */,
 				FB839B7524057FEA00690E26 /* ContentView.swift */,
@@ -134,6 +141,45 @@
 				FB839B9524057FEF00690E26 /* Info.plist */,
 			);
 			path = NearbyPlacesUITests;
+			sourceTree = "<group>";
+		};
+		FB839BDF2405CCA800690E26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB839BE02405CCB200690E26 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				FB839BE12405CCBE00690E26 /* PlacesList */,
+				FB839BE22405CCC800690E26 /* PlaceDetails */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		FB839BE12405CCBE00690E26 /* PlacesList */ = {
+			isa = PBXGroup;
+			children = (
+				FB839BE42405CDA300690E26 /* PlacesListView.swift */,
+			);
+			path = PlacesList;
+			sourceTree = "<group>";
+		};
+		FB839BE22405CCC800690E26 /* PlaceDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FB839BA1240580AF00690E26 /* DetailView.swift */,
+			);
+			path = PlaceDetails;
+			sourceTree = "<group>";
+		};
+		FB839BE32405CCE900690E26 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +314,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB839B7224057FEA00690E26 /* AppDelegate.swift in Sources */,
+				FB839BA2240580AF00690E26 /* DetailView.swift in Sources */,
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
 				FB839B7624057FEA00690E26 /* ContentView.swift in Sources */,
+				FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

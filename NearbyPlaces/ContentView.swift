@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            PlacesListView().navigationBarTitle("Master")
+            Text("Swipe right for the list")
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 
