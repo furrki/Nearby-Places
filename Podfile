@@ -6,6 +6,7 @@ target 'NearbyPlaces' do
   use_frameworks!
 
   # Pods for NearbyPlaces
+  pod 'SwiftyJSON'
 
   target 'NearbyPlacesTests' do
     inherit! :search_paths
