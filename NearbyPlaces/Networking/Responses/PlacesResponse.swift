@@ -16,6 +16,6 @@ public struct PlacesResponse: Response {
         let json = JSON(contents).dictionaryValue
         if let results = json["results"]?.array {
             places = results.map { Place($0) }
-        }        
+        }
     }
 }

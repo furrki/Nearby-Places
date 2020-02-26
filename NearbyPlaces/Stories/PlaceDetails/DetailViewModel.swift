@@ -12,10 +12,10 @@ import Combine
 class DetailViewModel: ObservableObject {
     // MARK: - Properties
     let objectWillChange = PassthroughSubject<Void, Never>()
-    var placeDetails: PlaceDetail
+    var placeId: String
     
     // MARK: - Object Lifecycle
-    init(_ placeDetails: PlaceDetail) {
-        self.placeDetails = placeDetails
+    init(_ placeId: String) {
+        self.placeId = placeId
     }
 }
