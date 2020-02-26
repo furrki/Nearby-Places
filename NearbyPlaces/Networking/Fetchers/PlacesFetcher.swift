@@ -9,12 +9,12 @@
 import Foundation
 
 class PlacesFetcher {
-    public enum FetchResponse {
+    public enum FetchResult {
         case success(places: [Place])
         case failure(error: String)
     }
     
-    public typealias PlacesFetchHandler = (FetchResponse) -> Void
+    public typealias PlacesFetchHandler = (FetchResult) -> Void
     let RADIUS: Int = 100
     
     func getPlaces(lat: String, lng: String, withCompletion completionHandler: @escaping PlacesFetchHandler) {
@@ -23,12 +23,12 @@ class PlacesFetcher {
             "radius": RADIUS
             ], successBlock: { (response: PlacesResponse) in
                 if let places = response.places {
-                    completionHandler(FetchResponse.success(places: places))
+                    completionHandler(FetchResult.success(places: places))
                 } else {
-                    completionHandler(FetchResponse.failure(error: "Places not found."))
+                    completionHandler(FetchResult.failure(error: "Places not found."))
                 }
         }) { (error) in
-            completionHandler(FetchResponse.failure(error: error.error_message))
+            completionHandler(FetchResult.failure(error: error.error_message))
         }
     }
 }

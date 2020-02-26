@@ -1,5 +1,5 @@
 //
-//  PlacesResponse.swift
+//  DetailResponse.swift
 //  NearbyPlaces
 //
 //  Created by Furkan Kaynar on 26.02.2020.
@@ -9,13 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-public struct PlacesResponse: Response {
-    public var places: [Place]?
+public struct DetailResponse: Response {
+    public var detail: PlaceDetail?
 
     public init(_ contents: Data) {
         let json = JSON(contents).dictionaryValue
-        if let results = json["results"]?.array {
-            places = results.map { Place($0) }
+        if let result = json["result"] {
+            print(result)
+            detail = PlaceDetail(result)
         }
     }
 }

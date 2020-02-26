@@ -13,7 +13,7 @@ struct PlacesListView: View {
     
     var body: some View {
         List(1 ... 5, id: \.self) { x in
-            NavigationLink(destination: DetailView(viewModel: DetailViewModel(Mocker.getPlaceDetail()))) {
+            NavigationLink(destination: DetailView(viewModel: DetailViewModel(""))) {
                 Text("Master\nYou can display a list for example")
             }
         }
