@@ -20,6 +20,10 @@ public struct PlaceDetail {
     var lat: Double
     var lng: Double
     
+    var hasImage: Bool {
+        return photo_reference != nil
+    }
+    
     public init(_ json: JSON) {
         self.name = json["name"].stringValue
         self.formatted_address = json["formatted_address"].stringValue
