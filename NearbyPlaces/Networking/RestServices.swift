@@ -62,4 +62,19 @@ public class RestServices {
                 }
             })
     }
+    
+    public static func getData(_ endPoint: EndPointURL, parameters: Parameters?, successBlock: @escaping(_ data: Data) -> (), errorBlock: @escaping(_ error: ErrorResponse) -> ()) {
+        request(endPoint, parameters: parameters, requestType: .get, encoding: NOURLEncoding())
+            .validate()
+            .responseData { (response) in
+                if let data = response.data {
+                    if let statusCode = response.response?.statusCode, statusCode == 200 {
+                        successBlock(data)
+                    } else {
+                        let errorResponse = ErrorResponse(response.data ?? Data())
+                        errorBlock(errorResponse)
+                    }
+                }
+        }
+    }
 }
