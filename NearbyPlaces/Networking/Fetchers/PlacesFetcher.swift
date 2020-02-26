@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class PlacesFetcher {
     public enum FetchResult {
@@ -17,13 +18,18 @@ class PlacesFetcher {
     public typealias PlacesFetchHandler = (FetchResult) -> Void
     let RADIUS: Int = 100
     
-    func getPlaces(lat: String, lng: String, withCompletion completionHandler: @escaping PlacesFetchHandler) {
+    func getPlaces(lat: Double, lng: Double, withCompletion completionHandler: @escaping PlacesFetchHandler) {
         RestServices.getResponse(.getPlacesList, type: PlacesResponse.self, parameters: [
             "location": "\(lat),\(lng)",
             "radius": RADIUS
             ], successBlock: { (response: PlacesResponse) in
                 if let places = response.places {
-                    completionHandler(FetchResult.success(places: places))
+                    let placesWithDistance: [Place] = places.map { place in
+                        var newPlace: Place = place
+                        newPlace.distanceFromUser = newPlace.location.distance(from: CLLocation(latitude: lat, longitude: lng))
+                        return newPlace
+                    }
+                    completionHandler(FetchResult.success(places: placesWithDistance))
                 } else {
                     completionHandler(FetchResult.failure(error: "Places not found."))
                 }
