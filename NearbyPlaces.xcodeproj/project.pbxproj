@@ -29,6 +29,9 @@
 		FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF5240689F300690E26 /* PlacesListViewModel.swift */; };
 		FB839BF824068A0000690E26 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF724068A0000690E26 /* DetailViewModel.swift */; };
 		FB839BFA24068AED00690E26 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF924068AED00690E26 /* Mocker.swift */; };
+		FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */; };
+		FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */; };
+		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		FB839BF5240689F300690E26 /* PlacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewModel.swift; sourceTree = "<group>"; };
 		FB839BF724068A0000690E26 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FB839BF924068AED00690E26 /* Mocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
+		FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFetcher.swift; sourceTree = "<group>"; };
+		FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponse.swift; sourceTree = "<group>"; };
+		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 				FB839BE32405CCE900690E26 /* Networking */,
 				FB839BDF2405CCA800690E26 /* Model */,
 				FB839BE02405CCB200690E26 /* Stories */,
+				FBD7F5062406D75900BD7C61 /* Utils */,
 				FB839B7124057FEA00690E26 /* AppDelegate.swift */,
 				FB839B7324057FEA00690E26 /* SceneDelegate.swift */,
 				FB839B7524057FEA00690E26 /* ContentView.swift */,
@@ -241,6 +248,7 @@
 		FB839BE32405CCE900690E26 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FBD7F5012406C0FE00BD7C61 /* Fetchers */,
 				FB839BF02406878300690E26 /* Responses */,
 				FB839BEC2406819E00690E26 /* EndPointURL.swift */,
 				FB839BEE240681A800690E26 /* RestServices.swift */,
@@ -253,8 +261,25 @@
 			children = (
 				FB839BF1240687B700690E26 /* ErrorResponse.swift */,
 				FB839BF3240688D300690E26 /* Response.swift */,
+				FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		FBD7F5012406C0FE00BD7C61 /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */,
+			);
+			path = Fetchers;
+			sourceTree = "<group>";
+		};
+		FBD7F5062406D75900BD7C61 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +526,8 @@
 				FB839BA2240580AF00690E26 /* DetailView.swift in Sources */,
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
 				FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */,
+				FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */,
+				FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */,
 				FB839BE72406631000690E26 /* Place.swift in Sources */,
 				FB839BF2240687B700690E26 /* ErrorResponse.swift in Sources */,
 				FB839BEB240663F000690E26 /* PlaceDetail.swift in Sources */,
@@ -508,6 +535,7 @@
 				FB839BF824068A0000690E26 /* DetailViewModel.swift in Sources */,
 				FB839BFA24068AED00690E26 /* Mocker.swift in Sources */,
 				FB839B7624057FEA00690E26 /* ContentView.swift in Sources */,
+				FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */,
 				FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */,
 				FB839BEF240681A800690E26 /* RestServices.swift in Sources */,
 			);

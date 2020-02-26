@@ -13,4 +13,22 @@ class PlacesListViewModel: ObservableObject {
     // MARK: - Properties
     let objectWillChange = PassthroughSubject<Void, Never>()
     
+    let placesFetcher: PlacesFetcher = PlacesFetcher()
+    var places: [Place] = []
+    
+    init() {
+        configureTable()
+    }
+    
+    func set(places: [Place]) {
+        self.places = places
+        objectWillChange.send()
+    }
+    
+    func configureTable() {
+        placesFetcher.getPlaces(lat: "42.697708", lng: "23.321867") { [weak self] fetchResponse in
+            guard case .success(let places) = fetchResponse else { return }
+            self?.set(places: places)
+        }
+    }
 }

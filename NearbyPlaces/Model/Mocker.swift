@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public class Mocker {
     static func getPlaces() -> [Place] {
         return [
-            Place(place_id: "Place_Id", name: "Plane_Name", lat: 12.0, lng: 12.0),
-            Place(place_id: "Place_Id_2", name: "Plane_Name_2", lat: 13.0, lng: 13.0),
-            Place(place_id: "Place_Id_3", name: "Plane_Name_3", lat: 14.0, lng: 14.0),
+            Place(JSON())
+//            Place(place_id: "Place_Id", name: "Plane_Name", lat: 12.0, lng: 12.0),
+//            Place(place_id: "Place_Id_2", name: "Plane_Name_2", lat: 13.0, lng: 13.0),
+//            Place(place_id: "Place_Id_3", name: "Plane_Name_3", lat: 14.0, lng: 14.0),
         ]
     }
     

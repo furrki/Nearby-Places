@@ -22,8 +22,8 @@ public enum EndPointURL: String {
     func fullPath(_ params: [String]? = nil) -> String {
         if let params = params {
             let trimmedParams = params.compactMap { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            return String(format: "\(NetworkingConstants.BASE_URL)\(self.rawValue)", arguments: trimmedParams)
+            return String(format: "\(NetworkingConstants.BASE_URL)\(self.rawValue)&key=\(NetworkingConstants.API_KEY)", arguments: trimmedParams)
         }
-        return "\(NetworkingConstants.BASE_URL)\(self.rawValue)"
+        return "\(NetworkingConstants.BASE_URL)\(self.rawValue)?key=\(NetworkingConstants.API_KEY)"
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlaceDetail {
+public struct PlaceDetail {
     var name: String
     var formatted_address: String
     var international_phone_number: String

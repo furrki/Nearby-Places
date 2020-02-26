@@ -7,10 +7,27 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct Place {
+public struct Place {
     var place_id: String
     var name: String
     var lat: Double
     var lng: Double
+    
+    public init(_ json: JSON) {
+        self.place_id = json["place_id"].stringValue
+        self.name = json["name"].stringValue
+        if  let geometry = json["geometry"].dictionary,
+            let location = geometry["location"]?.dictionary,
+            let lat = location["lat"]?.double,
+            let lng = location["lng"]?.double {
+        
+            self.lat = lat
+            self.lng = lng
+        } else {
+            self.lat = 0
+            self.lng = 0.0
+        }
+    }
 }
