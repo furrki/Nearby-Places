@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            PlacesListView().navigationBarTitle("Master")
+            PlacesListView(viewModel: PlacesListViewModel()).navigationBarTitle("Master")
             Text("Swipe right for the list")
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
         .padding()

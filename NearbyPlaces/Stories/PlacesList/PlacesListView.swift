@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct PlacesListView: View {
+    @ObservedObject var viewModel: PlacesListViewModel
+    
     var body: some View {
         List(1 ... 5, id: \.self) { x in
-            NavigationLink(destination: DetailView()) {
+            NavigationLink(destination: DetailView(viewModel: DetailViewModel(Mocker.getPlaceDetail()))) {
                 Text("Master\nYou can display a list for example")
             }
         }
@@ -20,6 +22,6 @@ struct PlacesListView: View {
 
 struct PlacesListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesListView()
+        PlacesListView(viewModel: PlacesListViewModel())
     }
 }

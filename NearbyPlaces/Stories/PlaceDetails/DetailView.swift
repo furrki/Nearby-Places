@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct DetailView: View {
+    @ObservedObject var viewModel: DetailViewModel
+    
     var body: some View {
         Text("")
     }
@@ -16,6 +18,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(viewModel: DetailViewModel(Mocker.getPlaceDetail()))
     }
 }
