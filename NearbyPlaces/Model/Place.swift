@@ -8,12 +8,19 @@
 
 import Foundation
 import SwiftyJSON
+import CoreLocation
 
-public struct Place {
+public struct Place: Hashable {
     var place_id: String
     var name: String
     var lat: Double
     var lng: Double
+    
+    var location: CLLocation {
+        return CLLocation(latitude: lat, longitude: lng)
+    }
+    
+    var distanceFromUser: Double?
     
     public init(_ json: JSON) {
         self.place_id = json["place_id"].stringValue
@@ -26,7 +33,7 @@ public struct Place {
             self.lat = lat
             self.lng = lng
         } else {
-            self.lat = 0
+            self.lat = 0.0
             self.lng = 0.0
         }
     }

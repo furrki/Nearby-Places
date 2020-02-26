@@ -12,9 +12,13 @@ struct PlacesListView: View {
     @ObservedObject var viewModel: PlacesListViewModel
     
     var body: some View {
-        List(1 ... 5, id: \.self) { x in
-            NavigationLink(destination: DetailView(viewModel: DetailViewModel(""))) {
-                Text("Master\nYou can display a list for example")
+        List(viewModel.places, id: \.self) { place in
+            NavigationLink(destination: DetailView(viewModel: DetailViewModel(place.place_id))) {
+                HStack {
+                    Text("\(place.name)")
+                    Spacer()
+                    Text("\(String(format: "%.2f m", place.distanceFromUser ?? 0.0))")
+                }
             }
         }
     }

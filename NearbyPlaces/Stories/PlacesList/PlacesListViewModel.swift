@@ -26,7 +26,7 @@ class PlacesListViewModel: ObservableObject {
     }
     
     func configureTable() {
-        placesFetcher.getPlaces(lat: "42.697708", lng: "23.321867") { [weak self] fetchResult in
+        placesFetcher.getPlaces(lat: 42.697708, lng: 23.321867) { [weak self] fetchResult in
             guard case .success(let places) = fetchResult else { return }
             self?.set(places: places)
         }

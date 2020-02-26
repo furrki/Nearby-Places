@@ -177,6 +177,7 @@
 				FB839BDF2405CCA800690E26 /* Model */,
 				FB839BE02405CCB200690E26 /* Stories */,
 				FBD7F5062406D75900BD7C61 /* Utils */,
+				FBD7F50F24071DA700BD7C61 /* Extensions */,
 				FB839B7124057FEA00690E26 /* AppDelegate.swift */,
 				FB839B7324057FEA00690E26 /* SceneDelegate.swift */,
 				FB839B7524057FEA00690E26 /* ContentView.swift */,
@@ -289,6 +290,13 @@
 				FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FBD7F50F24071DA700BD7C61 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
