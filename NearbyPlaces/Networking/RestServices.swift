@@ -28,12 +28,12 @@ public class RestServices {
     }()
     
     // MARK: - Request Methods
-    static func request(_ URL: EndPointURL, parameters: Parameters?, encodedParams: [String]? = nil, requestType: HTTPMethod, encoding: ParameterEncoding, header: [String: String]? = nil) -> DataRequest {
+    private static func request(_ URL: EndPointURL, parameters: Parameters?, encodedParams: [String]? = nil, requestType: HTTPMethod, encoding: ParameterEncoding, header: [String: String]? = nil) -> DataRequest {
         let url = URL.fullPath(encodedParams)
         return manager.request(url, method: requestType, parameters: parameters, encoding: encoding, headers: header)
     }
     
-    static func request(_ URL: EndPointURL, httpBody: Data, encodedParams: [String]? = nil, requestType: HTTPMethod) -> DataRequest {
+    private static func request(_ URL: EndPointURL, httpBody: Data, encodedParams: [String]? = nil, requestType: HTTPMethod) -> DataRequest {
         guard let url = NSURL(string: URL.fullPath(encodedParams)) as URL? else {
             fatalError()
         }
@@ -45,9 +45,9 @@ public class RestServices {
         return manager.request(request)
     }
     
-    // MARK: - Appliances
-    public static func getResponse<T: Response>(_ endPoint: EndPointURL, successBlock: @escaping(_ response: T) -> (), errorBlock: @escaping(_ error: ErrorResponse) -> ()) {
-        request(endPoint, parameters: nil, requestType: .get, encoding: JSONEncoding.default)
+    // MARK: - Get Response
+    public static func getResponse<T: Response>(_ endPoint: EndPointURL, type: T.Type, parameters: Parameters?, successBlock: @escaping(_ response: T) -> (), errorBlock: @escaping(_ error: ErrorResponse) -> ()) {
+        request(endPoint, parameters: parameters, requestType: .get, encoding: NOURLEncoding())
             .validate()
             .responseJSON(completionHandler: {
                 response in
