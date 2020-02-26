@@ -34,6 +34,7 @@
 		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
 		FBD7F50A2406E09300BD7C61 /* DetailFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5092406E09300BD7C61 /* DetailFetcher.swift */; };
 		FBD7F50C2406E13800BD7C61 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F50B2406E13800BD7C61 /* DetailResponse.swift */; };
+		FBD7F50E2406E99700BD7C61 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F50D2406E99700BD7C61 /* ImageFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
 		FBD7F5092406E09300BD7C61 /* DetailFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFetcher.swift; sourceTree = "<group>"; };
 		FBD7F50B2406E13800BD7C61 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		FBD7F50D2406E99700BD7C61 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			children = (
 				FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */,
 				FBD7F5092406E09300BD7C61 /* DetailFetcher.swift */,
+				FBD7F50D2406E99700BD7C61 /* ImageFetcher.swift */,
 			);
 			path = Fetchers;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */,
 				FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */,
 				FB839BE72406631000690E26 /* Place.swift in Sources */,
+				FBD7F50E2406E99700BD7C61 /* ImageFetcher.swift in Sources */,
 				FB839BF2240687B700690E26 /* ErrorResponse.swift in Sources */,
 				FB839BEB240663F000690E26 /* PlaceDetail.swift in Sources */,
 				FB839BF4240688D300690E26 /* Response.swift in Sources */,
