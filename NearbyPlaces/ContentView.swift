@@ -14,6 +14,7 @@ struct ContentView: View {
             PlacesListView().navigationBarTitle("Master")
             Text("Swipe right for the list")
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .padding()
     }
 }
 

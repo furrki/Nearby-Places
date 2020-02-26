@@ -17,6 +17,8 @@
 		FB839B9424057FEF00690E26 /* NearbyPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839B9324057FEF00690E26 /* NearbyPlacesUITests.swift */; };
 		FB839BA2240580AF00690E26 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BA1240580AF00690E26 /* DetailView.swift */; };
 		FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BE42405CDA300690E26 /* PlacesListView.swift */; };
+		FB839BE72406631000690E26 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BE62406631000690E26 /* Place.swift */; };
+		FB839BEB240663F000690E26 /* PlaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BEA240663F000690E26 /* PlaceDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		FB839B9524057FEF00690E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB839BA1240580AF00690E26 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		FB839BE42405CDA300690E26 /* PlacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListView.swift; sourceTree = "<group>"; };
+		FB839BE62406631000690E26 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		FB839BEA240663F000690E26 /* PlaceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				FB839BE32405CCE900690E26 /* Networking */,
-				FB839BE02405CCB200690E26 /* Stories */,
 				FB839BDF2405CCA800690E26 /* Model */,
+				FB839BE02405CCB200690E26 /* Stories */,
 				FB839B7124057FEA00690E26 /* AppDelegate.swift */,
 				FB839B7324057FEA00690E26 /* SceneDelegate.swift */,
 				FB839B7524057FEA00690E26 /* ContentView.swift */,
@@ -146,6 +150,8 @@
 		FB839BDF2405CCA800690E26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB839BE62406631000690E26 /* Place.swift */,
+				FB839BEA240663F000690E26 /* PlaceDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 				FB839B7224057FEA00690E26 /* AppDelegate.swift in Sources */,
 				FB839BA2240580AF00690E26 /* DetailView.swift in Sources */,
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
+				FB839BE72406631000690E26 /* Place.swift in Sources */,
+				FB839BEB240663F000690E26 /* PlaceDetail.swift in Sources */,
 				FB839B7624057FEA00690E26 /* ContentView.swift in Sources */,
 				FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */,
 			);
