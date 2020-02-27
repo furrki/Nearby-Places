@@ -22,11 +22,11 @@ class PlacesListViewModel: ObservableObject {
     
     // MARK: - LifeCycle
     init() {
-        getUserLatLng()
+        reloadData()
     }
     
     func viewDidAppear() {
-        reloadData()
+        
     }
     
     func reloadData() {

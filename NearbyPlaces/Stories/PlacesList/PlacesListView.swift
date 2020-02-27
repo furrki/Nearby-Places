@@ -43,4 +43,3 @@ struct PlacesListView_Previews: PreviewProvider {
         PlacesListView(viewModel: PlacesListViewModel())
     }
 }
-
