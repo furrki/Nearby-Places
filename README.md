@@ -9,6 +9,8 @@ git clone https://github.com/furrki/Nearby-Places
 cd Nearby-Places
 pod install
 ```
+Please note that, you have to replace the API_KEY on Networking/EndPointURL.swift with your Google Places API Key.
+Because, the current key is not valid.
 
 # Screenshots
 
