@@ -36,6 +36,7 @@
 		FBD7F50C2406E13800BD7C61 /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F50B2406E13800BD7C61 /* DetailResponse.swift */; };
 		FBD7F50E2406E99700BD7C61 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F50D2406E99700BD7C61 /* ImageFetcher.swift */; };
 		FBD7F51324074D7800BD7C61 /* Date+getDayOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F51224074D7800BD7C61 /* Date+getDayOfWeek.swift */; };
+		FBD7F516240751D700BD7C61 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F515240751D700BD7C61 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		FBD7F50B2406E13800BD7C61 /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
 		FBD7F50D2406E99700BD7C61 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		FBD7F51224074D7800BD7C61 /* Date+getDayOfWeek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+getDayOfWeek.swift"; sourceTree = "<group>"; };
+		FBD7F515240751D700BD7C61 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +177,10 @@
 		FB839B7024057FEA00690E26 /* NearbyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				FB839BE32405CCE900690E26 /* Networking */,
 				FB839BDF2405CCA800690E26 /* Model */,
+				FBD7F514240751BB00BD7C61 /* UIKit to SwiftUI */,
 				FB839BE02405CCB200690E26 /* Stories */,
+				FB839BE32405CCE900690E26 /* Networking */,
 				FBD7F5062406D75900BD7C61 /* Utils */,
 				FBD7F50F24071DA700BD7C61 /* Extensions */,
 				FB839B7124057FEA00690E26 /* AppDelegate.swift */,
@@ -300,6 +303,14 @@
 				FBD7F51224074D7800BD7C61 /* Date+getDayOfWeek.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBD7F514240751BB00BD7C61 /* UIKit to SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FBD7F515240751D700BD7C61 /* MapView.swift */,
+			);
+			path = "UIKit to SwiftUI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +555,7 @@
 				FB839BED2406819E00690E26 /* EndPointURL.swift in Sources */,
 				FB839B7224057FEA00690E26 /* AppDelegate.swift in Sources */,
 				FB839BA2240580AF00690E26 /* DetailView.swift in Sources */,
+				FBD7F516240751D700BD7C61 /* MapView.swift in Sources */,
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
 				FBD7F50A2406E09300BD7C61 /* DetailFetcher.swift in Sources */,
 				FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */,

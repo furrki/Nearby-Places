@@ -67,10 +67,15 @@ struct DetailView: View {
                         
                         }
                         
+                        MapView(pinLocation: self.viewModel.placeDetail.location, title: self.viewModel.placeDetail.name, address: self.viewModel.placeDetail.formatted_address)
+                            .frame(width: geometry.size.width - 30.0, height: 250.0)
+                            .onTapGesture {
+                                let url = "http://maps.apple.com/maps?ll=\(self.viewModel.placeDetail.location.coordinate.latitude),\(self.viewModel.placeDetail.location.coordinate.longitude)"
+                                UIApplication.shared.open(URL(string: url)!)
+                        }
+                        
                         Spacer()
                     }
-                    
-                    
                 }.frame(width: UIScreen.main.bounds.width)
                 
                 
@@ -79,7 +84,9 @@ struct DetailView: View {
                 Text("Loading..")
                 Spacer()
             }
-        }.padding([.leading, .trailing], 10)
+        }
+            .padding([.leading, .trailing], 10)
+            .navigationBarTitle("Details")
             .onAppear {
                 self.viewModel.viewDidAppear()
         }
