@@ -14,7 +14,7 @@ class PlacesListViewModel: ObservableObject {
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     var placesFetcher: PlacesFetcherDelegate = PlacesFetcher()
-    var locationManager: LocationManager = LocationManager()
+    var locationManager: LocationManagerDelegate = LocationManager()
     var userLatLng: (Double, Double)?
     
     @Published var places: [Place] = []
@@ -74,7 +74,6 @@ class PlacesListViewModel: ObservableObject {
                 } else if case .failure(let error) = fetchResult {
                     self?.set(errorMessage: error)
                 }
-                
             }
         }
     }

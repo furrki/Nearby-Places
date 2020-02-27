@@ -7,8 +7,9 @@
 //
 
 import XCTest
-@testable import NearbyPlaces
 import CoreLocation
+@testable import NearbyPlaces
+
 class PlacesListTests: XCTestCase {
     
     var placesListView: PlacesListView!
@@ -19,6 +20,7 @@ class PlacesListTests: XCTestCase {
         placesListView = PlacesListView(viewModel: viewModel)
     }
 
+    // MARK: - Setters
     func testSetLatLng() {
         viewModel.set(latlng: (12.0, 12.0))
         XCTAssertNotNil(viewModel.userLatLng)
@@ -36,6 +38,7 @@ class PlacesListTests: XCTestCase {
         XCTAssertEqual(viewModel.places, [Mocker.getPlaces().first!])
     }
     
+    // MARK: - Places Fetcher
     func testPlacesFetcherDidFetch() {
         viewModel.set(latlng: (12.0, 12.0))
         viewModel.placesFetcher = PlacesFetcherMocker(isSuccessful: true)
@@ -48,6 +51,24 @@ class PlacesListTests: XCTestCase {
         viewModel.placesFetcher = PlacesFetcherMocker(isSuccessful: false)
         viewModel.configureTable()
         XCTAssertTrue(viewModel.places.isEmpty)
+        XCTAssertNotNil(viewModel.errorMessage)
+    }
+    
+    // MARK: - Location Manager
+    
+    func testGetLocation() {
+        let locationMocker: LocationManagerMocker = LocationManagerMocker(isSuccessful: true)
+        viewModel.locationManager = locationMocker
+        viewModel.getUserLatLng()
+        XCTAssertEqual(viewModel.userLatLng!.0, locationMocker.location.coordinate.latitude)
+        XCTAssertEqual(viewModel.userLatLng!.1, locationMocker.location.coordinate.longitude)
+    }
+    
+    func testErrorLocation() {
+        let locationMocker: LocationManagerMocker = LocationManagerMocker(isSuccessful: false)
+        viewModel.locationManager = locationMocker
+        viewModel.getUserLatLng()
+        XCTAssertNil(viewModel.userLatLng)
         XCTAssertNotNil(viewModel.errorMessage)
     }
 }
@@ -64,6 +85,23 @@ class PlacesFetcherMocker: PlacesFetcherDelegate {
             completionHandler(PlacesFetcher.FetchResult.success(places: Mocker.getPlaces()))
         } else {
             completionHandler(PlacesFetcher.FetchResult.failure(error: "Error"))
+        }
+    }
+}
+
+class LocationManagerMocker: LocationManagerDelegate {
+    let location: CLLocation = CLLocation(latitude: 12.0, longitude: 12.0)
+    var isSuccessful: Bool
+    
+    init(isSuccessful: Bool){
+        self.isSuccessful = isSuccessful
+    }
+    
+    func getLocation(_ completionHandler: @escaping LocationManager.LocationHandler) {
+        if isSuccessful {
+            completionHandler(LocationManager.LocationResult.success(location: location))
+        } else {
+            completionHandler(LocationManager.LocationResult.failure(error: "Error"))
         }
     }
 }
