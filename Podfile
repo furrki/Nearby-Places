@@ -8,6 +8,7 @@ target 'NearbyPlaces' do
   # Pods for NearbyPlaces
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod "SwiftUIRefresh"
 
   target 'NearbyPlacesTests' do
     inherit! :search_paths

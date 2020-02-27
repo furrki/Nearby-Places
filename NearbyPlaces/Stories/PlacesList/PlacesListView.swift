@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 struct PlacesListView: View {
     @ObservedObject var viewModel: PlacesListViewModel
     @State var hasError: Bool = false
+    @State private var isShowing = false
     
     var body: some View {
         List(viewModel.places, id: \.self) { place in
@@ -20,6 +22,11 @@ struct PlacesListView: View {
                     Spacer()
                     Text("\(String(format: "%.2f m", place.distanceFromUser ?? 0.0))")
                 }
+            }
+        }.pullToRefresh(isShowing: $isShowing) {
+            self.viewModel.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.isShowing = false
             }
         }.onAppear {
             self.viewModel.viewDidAppear()
