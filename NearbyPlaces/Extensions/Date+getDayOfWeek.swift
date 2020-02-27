@@ -9,6 +9,7 @@ import Foundation
 
 extension Date {
     func getDayOfWeek() -> Int {
-        return Calendar.current.component(.weekday, from: self)
+        let number: Int = Calendar.current.component(.weekday, from: self) - 2
+        return number < 0 ? 6 : number
     }
 }
