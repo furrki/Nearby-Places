@@ -15,7 +15,8 @@ class PlacesListViewModel: ObservableObject {
     
     let placesFetcher: PlacesFetcher = PlacesFetcher()
     let locationManager: LocationManager = LocationManager()
-    var userLatLng: (Double, Double) = (0.0, 0.0)
+    var userLatLng: (Double, Double)?
+    
     @Published var places: [Place] = []
     @Published var errorMessage: String?
     
@@ -25,6 +26,11 @@ class PlacesListViewModel: ObservableObject {
     }
     
     func viewDidAppear() {
+        reloadData()
+    }
+    
+    func reloadData() {
+        getUserLatLng()
     }
     
     // MARK: - Set Methods
@@ -46,7 +52,7 @@ class PlacesListViewModel: ObservableObject {
     }
     
     // MARK: - Fetchings
-    func getUserLatLng(){
+    func getUserLatLng() {
         locationManager.getLocation { [weak self] (locationResult) in
             if case .success(let location) = locationResult {
                 self?.set(latlng: (location.coordinate.latitude, location.coordinate.longitude))
@@ -57,9 +63,15 @@ class PlacesListViewModel: ObservableObject {
     }
     
     func configureTable() {
-        placesFetcher.getPlaces(lat: userLatLng.0, lng: userLatLng.1) { [weak self] fetchResult in
-            guard case .success(let places) = fetchResult else { return }
-            self?.set(places: places)
+        if let userLatLng = userLatLng {
+            placesFetcher.getPlaces(lat: userLatLng.0, lng: userLatLng.1) { [weak self] fetchResult in
+                guard case .success(let places) = fetchResult else { return }
+                if places.isEmpty {
+                    self?.set(errorMessage: "There aren't any places around you.")
+                } else {
+                    self?.set(places: places)
+                }
+            }
         }
     }
 }

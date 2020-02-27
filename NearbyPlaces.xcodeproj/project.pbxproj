@@ -337,6 +337,8 @@
 			dependencies = (
 			);
 			name = NearbyPlaces;
+			packageProductDependencies = (
+			);
 			productName = NearbyPlaces;
 			productReference = FB839B6E24057FEA00690E26 /* NearbyPlaces.app */;
 			productType = "com.apple.product-type.application";
@@ -412,6 +414,8 @@
 				Base,
 			);
 			mainGroup = FB839B6524057FEA00690E26;
+			packageReferences = (
+			);
 			productRefGroup = FB839B6F24057FEA00690E26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
