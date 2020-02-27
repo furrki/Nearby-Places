@@ -29,6 +29,7 @@
 		FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF5240689F300690E26 /* PlacesListViewModel.swift */; };
 		FB839BF824068A0000690E26 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF724068A0000690E26 /* DetailViewModel.swift */; };
 		FB839BFA24068AED00690E26 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF924068AED00690E26 /* Mocker.swift */; };
+		FB9FDC042407C28400A63030 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC032407C28400A63030 /* LocationManager.swift */; };
 		FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */; };
 		FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */; };
 		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
@@ -91,6 +92,7 @@
 		FB839BF5240689F300690E26 /* PlacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewModel.swift; sourceTree = "<group>"; };
 		FB839BF724068A0000690E26 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FB839BF924068AED00690E26 /* Mocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
+		FB9FDC032407C28400A63030 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFetcher.swift; sourceTree = "<group>"; };
 		FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponse.swift; sourceTree = "<group>"; };
 		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */,
+				FB9FDC032407C28400A63030 /* LocationManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
 				FBD7F50A2406E09300BD7C61 /* DetailFetcher.swift in Sources */,
 				FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */,
+				FB9FDC042407C28400A63030 /* LocationManager.swift in Sources */,
 				FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */,
 				FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */,
 				FB839BE72406631000690E26 /* Place.swift in Sources */,
@@ -744,6 +748,7 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NearbyPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -765,6 +770,7 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NearbyPlaces/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
