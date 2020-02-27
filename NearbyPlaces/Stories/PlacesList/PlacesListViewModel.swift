@@ -13,8 +13,8 @@ class PlacesListViewModel: ObservableObject {
     // MARK: - Properties
     let objectWillChange = PassthroughSubject<Void, Never>()
     
-    let placesFetcher: PlacesFetcherDelegate = PlacesFetcher()
-    let locationManager: LocationManager = LocationManager()
+    var placesFetcher: PlacesFetcherDelegate = PlacesFetcher()
+    var locationManager: LocationManager = LocationManager()
     var userLatLng: (Double, Double)?
     
     @Published var places: [Place] = []
@@ -65,12 +65,16 @@ class PlacesListViewModel: ObservableObject {
     func configureTable() {
         if let userLatLng = userLatLng {
             placesFetcher.getPlaces(lat: userLatLng.0, lng: userLatLng.1) { [weak self] fetchResult in
-                guard case .success(let places) = fetchResult else { return }
-                if places.isEmpty {
-                    self?.set(errorMessage: "There aren't any places around you.")
-                } else {
-                    self?.set(places: places)
+                if case .success(let places) = fetchResult  {
+                    if places.isEmpty {
+                        self?.set(errorMessage: "There aren't any places around you.")
+                    } else {
+                        self?.set(places: places)
+                    }
+                } else if case .failure(let error) = fetchResult {
+                    self?.set(errorMessage: error)
                 }
+                
             }
         }
     }
