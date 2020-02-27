@@ -76,6 +76,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func getLocation(_ completionHandler: @escaping LocationHandler) {
         self.didUpdateLocation = completionHandler
+        startTrackingLocation()
+        requestNewLocation()
         stopTrackingLocation()
     }
 }
