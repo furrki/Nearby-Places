@@ -15,7 +15,7 @@ class DetailFetcher {
         case failure(error: String)
     }
     
-    let fields: String = "name,formatted_address,rating,photos,geometry,price_level,opening_hours"
+    let fields: String = "name,formatted_address,rating,photos,geometry,price_level,opening_hours,international_phone_number"
     
     public typealias DetailFetchHandler = (FetchResult) -> Void
 

@@ -49,7 +49,7 @@ class DetailViewModel: ObservableObject {
     
     func set(detail: PlaceDetail) {
         self.placeDetail = detail
-        print(detail.rating)
+        print(detail)
         objectWillChange.send()
         
         if detail.hasImage {

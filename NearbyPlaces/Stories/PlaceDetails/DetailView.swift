@@ -14,15 +14,17 @@ struct DetailView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             if viewModel.placeDetail != nil {
+                GeometryReader { geometry in
+                    ScrollView(.vertical) {
                     VStack(alignment: .center, spacing: 0) {
-                        Text(viewModel.placeDetail.name).bold().font(Font.system(size: 20))
-
-                        if viewModel.imageData != nil {
+                        Text(self.viewModel.placeDetail.name).bold().font(Font.system(size: 20))
+                        
+                        if self.viewModel.imageData != nil {
                             Spacer().frame(height: 10.0)
-                            Image(uiImage: UIImage(data: viewModel.imageData ?? Data()) ?? UIImage())
+                            Image(uiImage: UIImage(data: self.viewModel.imageData ?? Data()) ?? UIImage())
                         }
                         
-                        if viewModel.placeDetail.rating != nil {
+                        if self.viewModel.placeDetail.rating != nil {
                             Spacer().frame(height: 10.0)
                             ZStack(alignment: .trailing) {
                                 HStack(alignment: .center, spacing: 3.0) {
@@ -30,14 +32,27 @@ struct DetailView: View {
                                         Image(systemName: "star.fill").fixedSize().frame(width: 30, height: 30, alignment: .center)
                                     }
                                 }
-                                Color.white.frame(width: 150.0 * ((5.0 - CGFloat(viewModel.placeDetail.rating!))/5.0), alignment: .trailing)
+                                Color.white.frame(width: 150.0 * ((5.0 - CGFloat(self.viewModel.placeDetail.rating!))/5.0), alignment: .trailing)
+                                HStack(alignment: .center, spacing: 3.0) {
+                                    ForEach(1...5, id: \.self) { index in
+                                        Image(systemName: "star").fixedSize().frame(width: 30, height: 30, alignment: .center)
+                                    }
+                                }
                             }.frame(height: 30)
                         }
                         
-                        Spacer()
                         
-                    }.frame(width: UIScreen.main.bounds.width)
-              
+                        Text(self.viewModel.placeDetail.formatted_address).font(Font.system(size: 16)).multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width - 30.0)
+                        Text(self.viewModel.placeDetail.international_phone_number).font(Font.system(size: 16)).lineLimit(1)
+                        
+                        }
+                        Spacer()
+                    }
+                    
+                    
+                }.frame(width: UIScreen.main.bounds.width)
+                
                 
             } else {
                 Spacer()
