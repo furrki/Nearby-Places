@@ -31,6 +31,7 @@
 		FB839BFA24068AED00690E26 /* Mocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BF924068AED00690E26 /* Mocker.swift */; };
 		FB9FDC042407C28400A63030 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC032407C28400A63030 /* LocationManager.swift */; };
 		FB9FDC062407D4F500A63030 /* String+phoneNumberToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC052407D4F500A63030 /* String+phoneNumberToURL.swift */; };
+		FB9FDC0C2407F2F200A63030 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0B2407F2F200A63030 /* StarsView.swift */; };
 		FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */; };
 		FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */; };
 		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
@@ -95,6 +96,7 @@
 		FB839BF924068AED00690E26 /* Mocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocker.swift; sourceTree = "<group>"; };
 		FB9FDC032407C28400A63030 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FB9FDC052407D4F500A63030 /* String+phoneNumberToURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+phoneNumberToURL.swift"; sourceTree = "<group>"; };
+		FB9FDC0B2407F2F200A63030 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFetcher.swift; sourceTree = "<group>"; };
 		FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponse.swift; sourceTree = "<group>"; };
 		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		FB839BE22405CCC800690E26 /* PlaceDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FB9FDC0A2407F2D500A63030 /* Components */,
 				FB839BA1240580AF00690E26 /* DetailView.swift */,
 				FB839BF724068A0000690E26 /* DetailViewModel.swift */,
 			);
@@ -281,6 +284,14 @@
 				FBD7F50B2406E13800BD7C61 /* DetailResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		FB9FDC0A2407F2D500A63030 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB9FDC0B2407F2F200A63030 /* StarsView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FBD7F5012406C0FE00BD7C61 /* Fetchers */ = {
@@ -567,6 +578,7 @@
 				FB839BA2240580AF00690E26 /* DetailView.swift in Sources */,
 				FBD7F516240751D700BD7C61 /* MapView.swift in Sources */,
 				FB839B7424057FEA00690E26 /* SceneDelegate.swift in Sources */,
+				FB9FDC0C2407F2F200A63030 /* StarsView.swift in Sources */,
 				FBD7F50A2406E09300BD7C61 /* DetailFetcher.swift in Sources */,
 				FB839BF6240689F300690E26 /* PlacesListViewModel.swift in Sources */,
 				FB9FDC042407C28400A63030 /* LocationManager.swift in Sources */,

@@ -35,19 +35,7 @@ struct DetailView: View {
                             
                             if self.viewModel.placeDetail.rating != nil {
                                 Spacer().frame(height: 10.0)
-                                ZStack(alignment: .trailing) {
-                                    HStack(alignment: .center, spacing: 3.0) {
-                                        ForEach(1...5, id: \.self) { index in
-                                            Image(systemName: "star.fill").foregroundColor(Color.yellow).fixedSize().frame(width: 30, height: 30, alignment: .center)
-                                        }
-                                    }
-                                    Color.white.frame(width: 150.0 * ((5.0 - CGFloat(self.viewModel.placeDetail.rating!))/5.0), alignment: .trailing)
-                                    HStack(alignment: .center, spacing: 3.0) {
-                                        ForEach(1...5, id: \.self) { index in
-                                            Image(systemName: "star").fixedSize().frame(width: 30, height: 30, alignment: .center)
-                                        }
-                                    }
-                                }.frame(height: 30)
+                                StarsView(viewModel: self.viewModel)
                             }
                             
                             if self.viewModel.placeDetail.weekday_text != nil {
@@ -65,7 +53,6 @@ struct DetailView: View {
                                 if let url: URL = self.viewModel.placeDetail.international_phone_number.phoneNumberToUrl() {
                                     UIApplication.shared.open(url)
                                 }
-                                
                             }) {
                                 Text(self.viewModel.placeDetail.international_phone_number)
                                     .font(Font.system(size: 16))
