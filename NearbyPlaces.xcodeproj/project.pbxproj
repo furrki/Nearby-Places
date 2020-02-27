@@ -32,6 +32,7 @@
 		FB9FDC042407C28400A63030 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC032407C28400A63030 /* LocationManager.swift */; };
 		FB9FDC062407D4F500A63030 /* String+phoneNumberToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC052407D4F500A63030 /* String+phoneNumberToURL.swift */; };
 		FB9FDC0C2407F2F200A63030 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0B2407F2F200A63030 /* StarsView.swift */; };
+		FB9FDC0E2407F44400A63030 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */; };
 		FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */; };
 		FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */; };
 		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
@@ -97,6 +98,7 @@
 		FB9FDC032407C28400A63030 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FB9FDC052407D4F500A63030 /* String+phoneNumberToURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+phoneNumberToURL.swift"; sourceTree = "<group>"; };
 		FB9FDC0B2407F2F200A63030 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFetcher.swift; sourceTree = "<group>"; };
 		FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponse.swift; sourceTree = "<group>"; };
 		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				FB839B8824057FEF00690E26 /* NearbyPlacesTests.swift */,
+				FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */,
 				FB839B8A24057FEF00690E26 /* Info.plist */,
 			);
 			path = NearbyPlacesTests;
@@ -606,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB839B8924057FEF00690E26 /* NearbyPlacesTests.swift in Sources */,
+				FB9FDC0E2407F44400A63030 /* ExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
