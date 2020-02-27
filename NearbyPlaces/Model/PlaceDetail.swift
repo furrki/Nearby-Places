@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreLocation
 
 public struct PlaceDetail {
     var name: String
@@ -19,6 +20,10 @@ public struct PlaceDetail {
     var price_level: Int?
     var lat: Double
     var lng: Double
+    
+    var location: CLLocation {
+        return CLLocation(latitude: lat, longitude: lng)
+    }
     
     var hasImage: Bool {
         return photo_reference != nil
