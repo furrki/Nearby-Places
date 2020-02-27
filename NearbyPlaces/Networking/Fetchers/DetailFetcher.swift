@@ -22,7 +22,8 @@ class DetailFetcher {
     func getDetail(placeId: String, withCompletion completionHandler: @escaping DetailFetchHandler) {
         RestServices.getResponse(.getDetailsOfPlace, type: DetailResponse.self, parameters: [
             "place_id": placeId,
-            "fields": fields
+            "fields": fields,
+            "language": "en"
             ], successBlock: { (response: DetailResponse) in
                 if let detail = response.detail {
                     completionHandler(FetchResult.success(detail: detail))
