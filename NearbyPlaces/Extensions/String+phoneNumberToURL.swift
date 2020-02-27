@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     func phoneNumberToUrl() -> URL? {
-        let dash = CharacterSet(charactersIn: "-+")
+        let dash = CharacterSet(charactersIn: "-")
         let cleanString = self.replacingOccurrences(of: " ", with: "").trimmingCharacters(in: dash)
         let tel = "tel://"
         let formattedString = tel + cleanString
