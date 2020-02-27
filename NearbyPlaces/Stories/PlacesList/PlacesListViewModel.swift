@@ -13,7 +13,7 @@ class PlacesListViewModel: ObservableObject {
     // MARK: - Properties
     let objectWillChange = PassthroughSubject<Void, Never>()
     
-    let placesFetcher: PlacesFetcher = PlacesFetcher()
+    let placesFetcher: PlacesFetcherDelegate = PlacesFetcher()
     let locationManager: LocationManager = LocationManager()
     var userLatLng: (Double, Double)?
     
