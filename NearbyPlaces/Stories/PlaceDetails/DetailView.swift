@@ -17,16 +17,16 @@ struct DetailView: View {
                 GeometryReader { geometry in
                     ScrollView(.vertical) {
                         VStack(alignment: .center, spacing: 5) {
-                            HStack {
+                            VStack {
                                 Text(self.viewModel.placeDetail.name)
                                     .bold()
                                     .font(Font.system(size: 20))
-                                    .frame(width: geometry.size.width - 30.0)
                                     .multilineTextAlignment(.center)
                                 if self.viewModel.placeDetail.price_level != nil {
-                                    Text("(\(self.viewModel.getPriceLevelText())").bold().font(Font.system(size: 17))
+                                    Text("$\(self.viewModel.getPriceLevelText())$").font(Font.system(size: 14))
                                 }
                             }
+                            .frame(width: geometry.size.width - 10.0)
                             
                             if self.viewModel.imageData != nil {
                                 Spacer().frame(height: 10.0)
