@@ -10,7 +10,11 @@ import Foundation
 import SwiftyJSON
 import CoreLocation
 
-public struct PlaceDetail {
+public struct PlaceDetail: Equatable {
+    public static func == (lhs: PlaceDetail, rhs: PlaceDetail) -> Bool {
+        return lhs.name == rhs.name && lhs.location.coordinate.latitude == rhs.location.coordinate.latitude && lhs.location.coordinate.longitude == rhs.location.coordinate.longitude
+    }
+
     var name: String
     var formatted_address: String
     var international_phone_number: String

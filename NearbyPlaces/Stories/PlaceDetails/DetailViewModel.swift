@@ -49,7 +49,6 @@ class DetailViewModel: ObservableObject {
     
     func set(detail: PlaceDetail) {
         self.placeDetail = detail
-        print(detail)
         objectWillChange.send()
         
         if detail.hasImage {
@@ -66,7 +65,7 @@ class DetailViewModel: ObservableObject {
     func getPriceLevelText() -> String {
         if  let placeDetail = placeDetail,
             let priceLevel: Int = placeDetail.price_level, priceLevel < 5 {
-            let levels: [String] = ["Free", "Inexpensive", "Moderate", "Expensice", "Very Expensive"]
+            let levels: [String] = ["Free", "Inexpensive", "Moderate", "Expensive", "Very Expensive"]
             return levels[priceLevel]
         }
         return ""

@@ -16,7 +16,6 @@
 		FB839B7824057FEF00690E26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB839B7724057FEF00690E26 /* Assets.xcassets */; };
 		FB839B7B24057FEF00690E26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB839B7A24057FEF00690E26 /* Preview Assets.xcassets */; };
 		FB839B7E24057FEF00690E26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB839B7C24057FEF00690E26 /* LaunchScreen.storyboard */; };
-		FB839B8924057FEF00690E26 /* NearbyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839B8824057FEF00690E26 /* NearbyPlacesTests.swift */; };
 		FB839B9424057FEF00690E26 /* NearbyPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839B9324057FEF00690E26 /* NearbyPlacesUITests.swift */; };
 		FB839BA2240580AF00690E26 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BA1240580AF00690E26 /* DetailView.swift */; };
 		FB839BE52405CDA300690E26 /* PlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB839BE42405CDA300690E26 /* PlacesListView.swift */; };
@@ -34,6 +33,7 @@
 		FB9FDC0C2407F2F200A63030 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0B2407F2F200A63030 /* StarsView.swift */; };
 		FB9FDC0E2407F44400A63030 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */; };
 		FB9FDC102407FAE800A63030 /* PlacesListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC0F2407FAE800A63030 /* PlacesListTests.swift */; };
+		FB9FDC1224080A3D00A63030 /* DetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FDC1124080A3D00A63030 /* DetailTests.swift */; };
 		FBD7F5032406C68800BD7C61 /* PlacesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */; };
 		FBD7F5052406C70800BD7C61 /* PlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */; };
 		FBD7F5082406D88F00BD7C61 /* NOURLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */; };
@@ -80,7 +80,6 @@
 		FB839B7D24057FEF00690E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB839B7F24057FEF00690E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB839B8424057FEF00690E26 /* NearbyPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbyPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB839B8824057FEF00690E26 /* NearbyPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPlacesTests.swift; sourceTree = "<group>"; };
 		FB839B8A24057FEF00690E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB839B8F24057FEF00690E26 /* NearbyPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbyPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB839B9324057FEF00690E26 /* NearbyPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPlacesUITests.swift; sourceTree = "<group>"; };
@@ -101,6 +100,7 @@
 		FB9FDC0B2407F2F200A63030 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FB9FDC0F2407FAE800A63030 /* PlacesListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListTests.swift; sourceTree = "<group>"; };
+		FB9FDC1124080A3D00A63030 /* DetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTests.swift; sourceTree = "<group>"; };
 		FBD7F5022406C68800BD7C61 /* PlacesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesFetcher.swift; sourceTree = "<group>"; };
 		FBD7F5042406C70800BD7C61 /* PlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesResponse.swift; sourceTree = "<group>"; };
 		FBD7F5072406D88F00BD7C61 /* NOURLEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOURLEncoding.swift; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		FB839B8724057FEF00690E26 /* NearbyPlacesTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB839B8824057FEF00690E26 /* NearbyPlacesTests.swift */,
 				FB9FDC0D2407F44400A63030 /* ExtensionTests.swift */,
 				FB9FDC0F2407FAE800A63030 /* PlacesListTests.swift */,
+				FB9FDC1124080A3D00A63030 /* DetailTests.swift */,
 				FB839B8A24057FEF00690E26 /* Info.plist */,
 			);
 			path = NearbyPlacesTests;
@@ -611,8 +611,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB839B8924057FEF00690E26 /* NearbyPlacesTests.swift in Sources */,
 				FB9FDC0E2407F44400A63030 /* ExtensionTests.swift in Sources */,
+				FB9FDC1224080A3D00A63030 /* DetailTests.swift in Sources */,
 				FB9FDC102407FAE800A63030 /* PlacesListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
