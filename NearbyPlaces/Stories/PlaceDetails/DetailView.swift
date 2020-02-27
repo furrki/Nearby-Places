@@ -16,8 +16,17 @@ struct DetailView: View {
             if viewModel.placeDetail != nil {
                 GeometryReader { geometry in
                     ScrollView(.vertical) {
-                    VStack(alignment: .center, spacing: 0) {
-                        Text(self.viewModel.placeDetail.name).bold().font(Font.system(size: 20))
+                    VStack(alignment: .center, spacing: 5) {
+                        HStack {
+                            Text(self.viewModel.placeDetail.name)
+                                .bold()
+                                .font(Font.system(size: 20))
+                                .frame(width: geometry.size.width - 30.0)
+                                .multilineTextAlignment(.center)
+                            if self.viewModel.placeDetail.price_level != nil {
+                                Text("(\(self.viewModel.getPriceLevelText())").bold().font(Font.system(size: 17))
+                            }
+                        }
                         
                         if self.viewModel.imageData != nil {
                             Spacer().frame(height: 10.0)
@@ -42,9 +51,12 @@ struct DetailView: View {
                         }
                         
                         
-                        Text(self.viewModel.placeDetail.formatted_address).font(Font.system(size: 16)).multilineTextAlignment(.center)
+                        Text(self.viewModel.placeDetail.formatted_address).font(Font.system(size: 16))
+                            .multilineTextAlignment(.center)
                             .frame(width: geometry.size.width - 30.0)
-                        Text(self.viewModel.placeDetail.international_phone_number).font(Font.system(size: 16)).lineLimit(1)
+                        Text(self.viewModel.placeDetail.international_phone_number)
+                            .font(Font.system(size: 16))
+                            .lineLimit(1)
                         
                         }
                         Spacer()

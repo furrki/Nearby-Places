@@ -16,7 +16,7 @@ public struct PlaceDetail {
     var rating: Double?
     var photo_reference: String?
     var weekday_text: [String]?
-    var price_level: String?
+    var price_level: Int?
     var lat: Double
     var lng: Double
     
@@ -31,7 +31,7 @@ public struct PlaceDetail {
         self.rating = json["rating"].double
         
         self.photo_reference = json["photo_reference"].stringValue
-        self.price_level = json["price_level"].string
+        self.price_level = json["price_level"].int
         self.weekday_text = json["weekday_text"].arrayObject as? [String]
         
         if  let photos = json["photos"].array,

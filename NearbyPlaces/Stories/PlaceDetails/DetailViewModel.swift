@@ -61,4 +61,14 @@ class DetailViewModel: ObservableObject {
         self.imageData = image
         objectWillChange.send()
     }
+    
+    //MARK: - Methods
+    func getPriceLevelText() -> String {
+        if  let placeDetail = placeDetail,
+            let priceLevel: Int = placeDetail.price_level, priceLevel < 5 {
+            let levels: [String] = ["Free", "Inexpensive", "Moderate", "Expensice", "Very Expensive"]
+            return levels[priceLevel]
+        }
+        return ""
+    }
 }
