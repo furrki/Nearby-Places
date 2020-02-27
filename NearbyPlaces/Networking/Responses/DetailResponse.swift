@@ -15,7 +15,6 @@ public struct DetailResponse: Response {
     public init(_ contents: Data) {
         let json = JSON(contents).dictionaryValue
         if let result = json["result"] {
-            print(result)
             detail = PlaceDetail(result)
         }
     }
