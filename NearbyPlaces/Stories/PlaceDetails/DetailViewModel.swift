@@ -71,4 +71,14 @@ class DetailViewModel: ObservableObject {
         }
         return ""
     }
+    
+    func getWorkingHoursForToday() -> String {
+        if  let placeDetail = placeDetail,
+            let weekdayTexts = placeDetail.weekday_text, weekdayTexts.count == 7 {
+            let now: Date = Date()
+            
+            return weekdayTexts[now.getDayOfWeek()]
+        }
+        return ""
+    }
 }

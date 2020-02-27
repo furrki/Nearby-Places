@@ -32,7 +32,10 @@ public struct PlaceDetail {
         
         self.photo_reference = json["photo_reference"].stringValue
         self.price_level = json["price_level"].int
-        self.weekday_text = json["weekday_text"].arrayObject as? [String]
+        
+        if let openingHours = json["opening_hours"].dictionary {
+            self.weekday_text = openingHours["weekday_text"]?.arrayObject as? [String]
+        }
         
         if  let photos = json["photos"].array,
             let firstPhoto = photos.first,
