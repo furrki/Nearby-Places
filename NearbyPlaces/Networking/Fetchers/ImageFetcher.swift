@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ImageFetcher {
+protocol ImageFetcherDelegate {
+    func getImage(photoreference: String, withCompletion completionHandler: @escaping ImageFetcher.ImageFetcherHandler)
+}
+
+class ImageFetcher: ImageFetcherDelegate {
     public enum FetchResult {
         case success(imageData: Data)
         case failure(error: String)

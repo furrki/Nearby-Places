@@ -9,7 +9,11 @@
 import Foundation
 import CoreLocation
 
-class PlacesFetcher {
+protocol PlacesFetcherDelegate {
+    func getPlaces(lat: Double, lng: Double, withCompletion completionHandler: @escaping PlacesFetcher.PlacesFetchHandler)
+}
+
+class PlacesFetcher: PlacesFetcherDelegate {
     public enum FetchResult {
         case success(places: [Place])
         case failure(error: String)

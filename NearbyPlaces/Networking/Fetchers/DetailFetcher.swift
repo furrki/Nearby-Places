@@ -8,8 +8,11 @@
 
 import Foundation
 
+protocol DetailFetcherDelegate {
+    func getDetail(placeId: String, withCompletion completionHandler: @escaping DetailFetcher.DetailFetchHandler)
+}
 
-class DetailFetcher {
+class DetailFetcher: DetailFetcherDelegate {
     public enum FetchResult {
         case success(detail: PlaceDetail)
         case failure(error: String)
