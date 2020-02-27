@@ -9,7 +9,11 @@
 import Foundation
 import CoreLocation
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+protocol LocationManagerDelegate {
+    func getLocation(_ completionHandler: @escaping LocationManager.LocationHandler)
+}
+
+class LocationManager: NSObject, CLLocationManagerDelegate, LocationManagerDelegate {
     public enum LocationResult {
         case success(location: CLLocation)
         case failure(error: String)
