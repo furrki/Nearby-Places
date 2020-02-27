@@ -50,15 +50,23 @@ struct DetailView: View {
                             }.frame(height: 30)
                         }
                         
+                        if self.viewModel.placeDetail.weekday_text != nil {
+                            Text(self.viewModel.getWorkingHoursForToday()).font(Font.system(size: 16))
+                            .multilineTextAlignment(.center)
+                            .frame(width: geometry.size.width - 30.0)
+                        }
                         
                         Text(self.viewModel.placeDetail.formatted_address).font(Font.system(size: 16))
                             .multilineTextAlignment(.center)
                             .frame(width: geometry.size.width - 30.0)
+                        
                         Text(self.viewModel.placeDetail.international_phone_number)
                             .font(Font.system(size: 16))
+                            .frame(width: geometry.size.width - 30.0)
                             .lineLimit(1)
                         
                         }
+                        
                         Spacer()
                     }
                     
