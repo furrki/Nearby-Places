@@ -16,8 +16,8 @@ class DetailViewModel: ObservableObject {
     @Published var placeDetail: PlaceDetail!
     @Published var imageData: Data?
     
-    let detailFetcher: DetailFetcher = DetailFetcher()
-    let imageFetcher: ImageFetcher = ImageFetcher()
+    let detailFetcher: DetailFetcherDelegate = DetailFetcher()
+    let imageFetcher: ImageFetcherDelegate = ImageFetcher()
     
     // MARK: - Object Lifecycle
     init(_ placeId: String) {
