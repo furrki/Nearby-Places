@@ -13,7 +13,7 @@ public struct PlaceDetail {
     var name: String
     var formatted_address: String
     var international_phone_number: String
-    var rating: String?
+    var rating: Double?
     var photo_reference: String?
     var weekday_text: [String]?
     var price_level: String?
@@ -28,7 +28,7 @@ public struct PlaceDetail {
         self.name = json["name"].stringValue
         self.formatted_address = json["formatted_address"].stringValue
         self.international_phone_number = json["international_phone_number"].stringValue
-        self.rating = json["rating"].string
+        self.rating = json["rating"].double
         
         self.photo_reference = json["photo_reference"].stringValue
         self.price_level = json["price_level"].string

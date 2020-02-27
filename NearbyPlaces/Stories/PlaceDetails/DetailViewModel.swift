@@ -13,8 +13,8 @@ class DetailViewModel: ObservableObject {
     // MARK: - Properties
     let objectWillChange = PassthroughSubject<Void, Never>()
     var placeId: String
-    var placeDetail: PlaceDetail?
-    var imageData: Data?
+    @Published var placeDetail: PlaceDetail!
+    @Published var imageData: Data?
     
     let detailFetcher: DetailFetcher = DetailFetcher()
     let imageFetcher: ImageFetcher = ImageFetcher()
@@ -22,6 +22,9 @@ class DetailViewModel: ObservableObject {
     // MARK: - Object Lifecycle
     init(_ placeId: String) {
         self.placeId = placeId
+    }
+    
+    func viewDidAppear() {
         getDetails()
     }
     
@@ -46,6 +49,7 @@ class DetailViewModel: ObservableObject {
     
     func set(detail: PlaceDetail) {
         self.placeDetail = detail
+        print(detail.rating)
         objectWillChange.send()
         
         if detail.hasImage {
